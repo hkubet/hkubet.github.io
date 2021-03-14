@@ -1,0 +1,12 @@
+I"�<h2 id="updates">Updates</h2>
+<p>Our project is very close to being finished. Our group made some changes since the last update, for example, we discard the implied volatility as our main parameter and used stock return instead. The main reason to use stock return is because implied volatility would change vastly when the strike price of options change. In addition, we added a trading strategy based on our results; the trading strategy is relatively compelling with a linear regression as support.</p>
+
+<p>##Trading Strategy
+After discussions with the professor, our group has decided to act on our final results and add a trading strategy. After closely looking into the data, we found two statistically significant factors relating to stock return.</p>
+
+<p>###Trading Hours Sentiment
+The first is “Trading Hours” sentiment and stock return in the same period. The set of parameter has a p-value of 9.1%; however, in practise it is physically impossible to collect all the sentiment of the day and trade the stock at the beginning of the day(We’ll have to  go back in time to execute such trade). This is more like a post hoc analysis.</p>
+
+<p>###Trading Hours (average of Lag1+Lag2)
+The</p>
+:ET
