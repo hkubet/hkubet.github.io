@@ -1,0 +1,32 @@
+I"p<h2 id="project-status">Project status</h2>
+
+<p>The project is running relatively smoothly at the moment.
+<img src="/img/Status.png" alt="img" />
+We are about 50% done with the project report, where we kept track of progress and accounts.</p>
+
+<p>The web-scraping code is 90% done, we’re going to use this code to scrape the WSB subreddit recent threads and comments to obtain the raw data for our analysis. The core tools we plan to use are pushshiftAPI from psaw and praw. PushshiftAPI provided a search by date function, an important tool as we would want to define the exact period.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    api=PushshiftAPI()
+    result = api.search_submissions(*input parameter)
+</code></pre></div></div>
+<p><img src="/img/pushshiftapi.jpg" alt="img" /></p>
+
+<p><img src="/img/psapi.png" alt="img" /></p>
+
+<p>The other difficulty we met during web-scraping has something to do with time format. The comments from reddit are running 24/7，but the stocks are only traded during trading hours in business day. Hence we need to organize the comments in the timestamp that is applicable to to our trading data. To do this, we used the pandas Bday and Hday functions. The displayed code can also distinguish trading hours from non-trading hours by utilizing the pandas dataframe function.</p>
+
+<p><img src="/img/pandascode.jpg" alt="img" /></p>
+
+<p>This whole Reddit-GameStop saga only happened for less than 2 months, hence there is relatively insufficient textual data compared to the regular database. The key thing to note here is the scraping process would be on-going. As time goes by, our data grows with it; we treasure every new thread and comments tremendously as that could potentially change the outcome of our result drastically. Also, scraping other subreddit such as r/thetagang could increase our data size significantly.</p>
+
+<p>As for the sentiment analysis, the process is close to 70% done, as we have already figured out the process for data cleaning.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    word_tokenize(text)
+    stop_words = stopwords.words('english')
+    stemmer = PorterStemmer()
+</code></pre></div></div>
+<p>However the most important for sentiment analysis is finding the best dictionary that applies to our data. Reddit is one of the most intricate parts of internet discussion; the internet language used by these ‘redditer’ is the most in-line with the current trend of the internet. This makes finding a perfect dictionary for analyzing Reddit incredibly difficult as the existing dictionary could not possibly follow these ‘hot’ topics constantly and update themselves. The most straightforward way to analyze the result would be NLTK VADER, the polarity score could directly reflect the aggregate sentiment of certain sentences, and it is considered a very viable choice for social media sentiment analysis. Loughran MacDonald’s word list got its reputation by applying it to financial statement analysis, however, its application in internet language is limited. We’re still exploring multiple opportunities to increase our analysis accuracy.</p>
+
+<p>We are also deciding if implied volatility is the best parameter for the project. On the one hand, implied vol seems to be a straightforward and easy-to-get parameter; on the other hand, it directly links to the price of the option and might not best represent the market risk at such special times.</p>
+
+<p>We expect the project to be finished by March the 13th; it will give us enough time to reflect and refine the project report.</p>
+:ET
