@@ -37,6 +37,7 @@ For the df_trading piece, it selects the comments from 9:30am to 4pm (Eastern Ti
 
 
 -	How we calculate the three different kinds of sentiment scores:
+
 1. Reddit comment score - weighted score: the number of upvotes extracted earlier in the scrapped data, presenting the influence of the submission. The more upvotes one submission receives, the higher weight it gets.
 
 2. Log_Reddit comment - score: scaled by the logarithm function: for every comment score, it is applied with log10 divided by the sum of the logged comment scores. This method assigns submission or comments with significant upvotes not as much weight compared to the Reddit comment score-weighted strategy.
